@@ -79,8 +79,8 @@ Where p ̂ is the predicted probability given by our classifier. This is the sim
 
 
 
-# file1 = st.file_uploader("Upload Your Dataset Here", accept_multiple_files=False, help="You should upload a dataset that has labels for all observations and any number of features. Labels should be categorized in the following way: Non-Toxic, Toxic, and Higly-Toxic")
-file1 = "../Mimetas MPS dataset for ML analysis.csv"
+file1 = st.file_uploader("Upload Your Dataset Here", accept_multiple_files=False, help="You should upload a dataset that has labels for all observations and any number of features. Labels should be categorized in the following way: Non-Toxic, Toxic, and Higly-Toxic")
+#file1 = "../Mimetas MPS dataset for ML analysis.csv"
 
 ## Initial Dataset
 if file1 != None:
@@ -165,7 +165,7 @@ if file1 != None:
     st.sidebar.write("#### Save Your Model to Your MPS Db Profile for Future Use")
     st.sidebar.download_button(label="Save Model", data="best_model")
     
-    st.write("### Use your Trained Model")
+    st.write("### Use your Trained Modeld")
     
     example = X_test
     
