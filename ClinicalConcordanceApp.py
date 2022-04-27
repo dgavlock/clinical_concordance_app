@@ -101,9 +101,9 @@ if file1 != None:
         
         mps_join_id = st.sidebar.selectbox("Please Select MPS-Db column to use as an index for Joining the Selected Clinical Data Label with the MPS Study Data", df.columns)
 
-clin_join_id = st.sidebar.selectbox("Please Select Clinical column to use as an index for Joining the Selected Clinical Data Label with the MPS Study Data", df.columns)
+        clin_join_id = st.sidebar.selectbox("Please Select Clinical column to use as an index for Joining the Selected Clinical Data Label with the MPS Study Data", df.columns)
 
-label_join_method = st.sidebar.radio("Please Select the Method for Joining the Selected Clinical Data Label with the MPS Study Data", ["Left", "Right"])
+        label_join_method = st.sidebar.radio("Please Select the Method for Joining the Selected Clinical Data Label with the MPS Study Data", ["Left", "Right"])
 
     ## Initial Features and Prediction Column Selection
     train_features = st.sidebar.multiselect("Select Model Features", list(df.select_dtypes(include=[np.number]).columns))
