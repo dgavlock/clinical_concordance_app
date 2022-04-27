@@ -168,7 +168,7 @@ if file1 != None:
     st.sidebar.write("#### Save Your Model to Your MPS Db Profile for Future Use")
     st.sidebar.download_button(label="Save Model", data="best_model")
     
-    st.write("### Use your Trained Modeld")
+    st.write("### Use your Trained Model")
     
     example = X_test
     
