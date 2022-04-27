@@ -2,7 +2,7 @@
 # coding: utf-8
 # Streamlit
 import streamlit as st
-from st_aggrid import AgGrid
+#from st_aggrid import AgGrid
 
 # Standard Data Science Importants for Plotting and Transformations
 import pandas as pd
@@ -92,8 +92,9 @@ if file1 != None:
 
     ## Editible Grid
     st.write(" ### Data Table")
-    grid_return = AgGrid(df, editable=True)
-    new_df = grid_return['data']
+    # grid_return = AgGrid(df, editable=True)
+    # new_df = grid_return['data']
+    st.write(df)
     
     with st.expander("Data Statistics Table"):
         st.write(df.describe())
