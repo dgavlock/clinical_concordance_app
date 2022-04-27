@@ -98,22 +98,20 @@ if file1 != None:
     
     with st.expander("Data Statistics Table"):
         st.write(df.describe())
+        
+        mps_join_id = st.sidebar.selectbox("Please Select MPS-Db column to use as an index for Joining the Selected Clinical Data Label with the MPS Study Data", df.columns)
 
+clin_join_id = st.sidebar.selectbox("Please Select Clinical column to use as an index for Joining the Selected Clinical Data Label with the MPS Study Data", df.columns)
+
+label_join_method = st.sidebar.radio("Please Select the Method for Joining the Selected Clinical Data Label with the MPS Study Data", ["Left", "Right"])
 
     ## Initial Features and Prediction Column Selection
-
     train_features = st.sidebar.multiselect("Select Model Features", list(df.select_dtypes(include=[np.number]).columns))
 
     avail_features = list(set(df.columns) - set(train_features))
 
     train_labels = st.sidebar.selectbox("Select Model Prediction Class", avail_features)
     
-    mps_join_id = st.sidebar.selectbox("Please Select MPS-Db column to use as an index for Joining the Selected Clinical Data Label with the MPS Study Data", df.columns)
-    
-    clin_join_id = st.sidebar.selectbox("Please Select Clinical column to use as an index for Joining the Selected Clinical Data Label with the MPS Study Data", df.columns)
-    
-    label_join_method = st.sidebar.radio("Please Select the Method for Joining the Selected Clinical Data Label with the MPS Study Data", ["Left", "Right"])
-
     split_ratio = st.sidebar.slider("Please select the ratio of data to be held out for testing", 0.1, 0.9, 0.3)
     
     ## NaN Strategy Selection
