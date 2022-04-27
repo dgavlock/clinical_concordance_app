@@ -108,7 +108,11 @@ if file1 != None:
 
     train_labels = st.sidebar.selectbox("Select Model Prediction Class", avail_features)
     
-    label_join_method = st.sidebar.selectbox("Please Select the Method for Joining the Selected Clinical Data Label with the MPS Study Data", ["Left", "Right"])
+    mps_join_id = st.sidebar.selectbox("Please Select MPS-Db column to use as an index for Joining the Selected Clinical Data Label with the MPS Study Data", df.columns)
+    
+    clin_join_id = st.sidebar.selectbox("Please Select Clinical column to use as an index for Joining the Selected Clinical Data Label with the MPS Study Data", df.columns)
+    
+    label_join_method = st.sidebar.radio("Please Select the Method for Joining the Selected Clinical Data Label with the MPS Study Data", ["Left", "Right"])
 
     split_ratio = st.sidebar.slider("Please select the ratio of data to be held out for testing", 0.1, 0.9, 0.3)
     
