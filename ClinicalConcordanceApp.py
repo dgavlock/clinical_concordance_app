@@ -144,7 +144,7 @@ if file1 != None:
         ('select', SelectKBest()),
         ('model', calibrated_forest)])
 
-    search = GridSearchCV(pipe, param_grid, cv=5).fit(X_train, _ytrain)
+    search = GridSearchCV(pipe, param_grid, cv=5).fit(X_train, y_train)
 
     best_model = search.best_estimator_
 
