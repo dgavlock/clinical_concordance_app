@@ -154,7 +154,8 @@ if file1 != None:
     y_probas = best_model.predict_proba(X_test)
     labels=y_pred
 
-    st.column(st.metric("Model Accuracy:", '{0:.4g}%'.format(accuracy_score(best_model.predict(X_test), y_test)*100) ), st.metric("ROC AUC Score:", '{0:.4g}'.format(roc_auc_score(y_test, y_probas, multi_class='ovo'))))
+    st.metric("Model Accuracy:", '{0:.4g}%'.format(accuracy_score(best_model.predict(X_test), y_test)*100) )
+    st.metric("ROC AUC Score:", '{0:.4g}'.format(roc_auc_score(y_test, y_probas, multi_class='ovo')))
 
     fig, ax = plt.subplots()
     sns.heatmap(confusion_matrix(y_test, best_model.predict(X_test)), annot=True, xticklabels=y_labels, yticklabels=y_labels)
