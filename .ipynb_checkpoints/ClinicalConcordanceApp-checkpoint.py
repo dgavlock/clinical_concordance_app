@@ -155,6 +155,8 @@ if file1 != None:
     labels=y_pred
 
     st.metric("ROC AUC Score:", '{0:.4g}'.format(roc_auc_score(y_test, y_probas, multi_class='ovo')))
+    
+    st.write(classification_report(y_test, y_pred))
 
     fig, ax = plt.subplots()
     sns.heatmap(confusion_matrix(y_test, best_model.predict(X_test)), annot=True, xticklabels=y_labels, yticklabels=y_labels)
