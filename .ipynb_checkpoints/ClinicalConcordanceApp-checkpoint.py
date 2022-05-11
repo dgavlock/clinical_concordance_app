@@ -111,7 +111,7 @@ if file1 != None:
 
     train_labels = st.sidebar.selectbox("Select Model Prediction Class", avail_features)
     
-    split_ratio = st.sidebar.slider("Please select the ratio of data to be held out for testing", 0.1, 0.9, 0.3)
+    split_ratio = st.sidebar.slider("Please select the ratio of data to be held out for testing", 0.1, 0.9, 0.41)
     
     ## NaN Strategy Selection
 
