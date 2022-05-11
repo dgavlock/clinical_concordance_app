@@ -159,7 +159,7 @@ if file1 != None:
     st.write(print(classification_report(y_test, y_pred)))
 
     fig, ax = plt.subplots()
-    sns.heatmap(confusion_matrix(y_test, best_model.predict(X_test)), annot=True, xticklabels=y_labels, yticklabels=y_labels)
+    sns.heatmap(confusion_matrix(y_test, best_model.predict(X_test)), annot=True)
     plt.rcParams["figure.figsize"] = (5,2)
     st.write(fig)
     
